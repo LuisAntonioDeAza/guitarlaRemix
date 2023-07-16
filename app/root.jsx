@@ -1,4 +1,13 @@
-import { Meta, Links, Outlet, Scripts, LiveReload } from "@remix-run/react";
+import {
+   Meta, 
+   Links,
+   Link,
+   Outlet,
+   Scripts,
+   LiveReload,
+   useRouteError,
+   isRouteErrorResponse,
+} from "@remix-run/react";
 
 import styles from "./styles/index.css";
 import Header from "~/Components/Header";
@@ -15,6 +24,7 @@ export function meta() {
    ];
 }
 
+//Importa hojas de estilos y fuentes de google
 export function links() {
    return [
       {
@@ -58,7 +68,7 @@ function Document({ children }) {
             <Links />
          </head>
          <body>
-            <Header />
+           <Header />
             {children}
             <Footer />
 
@@ -67,4 +77,23 @@ function Document({ children }) {
          </body>
       </html>
    );
+}
+
+/*** Manejo de errores */
+export function ErrorBoundary() {
+   const error = useRouteError();
+
+   if (isRouteErrorResponse(error)) {
+      return (
+         <Document>
+            <p className="error">
+               {error.status} {error.statusText}  
+               <br />
+               <Link to="/" className="enlace-error">Ir a la paguina principal</Link> 
+            </p>
+
+            
+         </Document>
+      );
+   }
 }

@@ -1,10 +1,10 @@
 import { Link, useLocation } from "@remix-run/react";
 
-const Nav = () => {
-
-    const location = useLocation();
+//barra de navegacion
+export default function Nav() {
+   const location = useLocation();
    return (
-      <nav className="navegacion">
+      <nav className="nav">
          <Link className={location.pathname === "/" ? "active" : ""} to="/">
             Inicio
          </Link>
@@ -19,6 +19,4 @@ const Nav = () => {
          </Link>
       </nav>
    );
-};
-
-export default Nav;
+}

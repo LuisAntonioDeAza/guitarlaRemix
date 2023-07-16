@@ -1,12 +1,10 @@
-.nosotros .contenido{
-    display: grid;
-    grid-template-columns: 1rf;
-    gap:5rem
-}
-
-@media(min-width: 768px){
-    .nosotros .contenido{
-    grid-template-columns: repeat(2,1fr);
-   
-    }
+.about img{
+    
+        margin: 15px;
+        max-width: 50%;
+         float:left;
+         border-radius: 10px;
+         box-shadow: 5px 5px 15px gray;
+     
+     
 }

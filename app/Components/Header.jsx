@@ -1,20 +1,18 @@
 import { Link } from "@remix-run/react";
 import Nav from "./Nav";
-import logo from '../../public/img/logo.svg'
+import logo from "../../public/img/logo.svg";
 
-const Header = () => {
-
+export default function Header() {
    return (
       <header className="header">
-         <div className="contedor barra">
+         <div className="container bar">
             <Link className="logo" to="/">
-               <img className="logo" src={logo} alt="logo imagen"></img>
+               <img className="logo" src={logo} alt="logo imagen"/>
             </Link>
 
+            {"Barra de navegacion"}
             <Nav />
          </div>
       </header>
    );
-};
-
-export default Header;
+}

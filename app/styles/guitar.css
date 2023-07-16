@@ -1,91 +1,100 @@
-:root {
-    --primary: #e99401;
-    --black: #262626;
-    --white: #FFF;
-    --fuente-principal: 'Outfit', sans-serif;
-  }
 
-.guitarras-grid{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center center;
+
+@media only screen and (max-device-width: 500px) {
+   .guitarras-grid {
+      display: grid;
+      grid-template-columns: 1fr !important;
+      gap: 3rem;
+      align-items: center center;
+   }
+
+}
+
+@media (min-width: 768px) {
+   .guitarras-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      align-items: center center;
+   }
+}
+
+@media (min-width: 992px) {
+   .guitarras-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      align-items: center center;
+   }
+}
+
+.guitarras-grid img {
+   height: 100%;
+}
+
+.guitarsStyles {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 1em;
+}
+h3 {
+   font-size: 20px;
+   text-align: justify;
+}
+
+.guitarsStyles img {
+   height: auto !important;
+   display: block !important;
+   margin-left: auto !important;
   
 }
 
-@media(min-width:768px){
-    .guitarras-grid{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
-        align-items: center center;
-      
-    }
-}
 
-@media(min-width:992px){
-    .guitarras-grid{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3rem;
-        align-items: center center;
-      
-    }
-}
-
-.guitarras-grid img{
-    height: 100%;
-}
-
-.guitarra{
-    
-display: grid;
-grid-template-columns: repeat(2,1fr);
-gap: 1em;
-align-items: center;
-}
-
-.guitarra .contenido h1{
+.guitarsStyles .contenido h1 {
    color: var(--primary);
-
 }
 
-.guitarra .descripcion{
-
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 6;
-    overflow: hidden;
-    font-size: 1.8rem;
+.guitarsStyles .descripcion {
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 6;
+   overflow: hidden;
+   font-size: 1.8rem;
+}
+.precio {
+   color: var(--primary);
+   font-weight: 700;
+   text-align: right;
 }
 
-.guitarra .enlace{
-    border-style: solid;
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-    color: var(--primary);
-    width: fit-content;
-    padding: 1rem;
-    display: block !important;
-    background-color: var(--black);
-    width: 100% ;
-    color: white;
-
-    transition-property: all;
-    transition-duration: 300ms;
-    font-size: 20px;
+.price{
+   text-align: right;
 }
 
-.enlace:hover{
-    border-style: solid;
-    font-size: 22px;
-    background-color: #e99401;
-    color: white;
-    padding: 1.2rem;
+
+.goback .links{
+   display: block;
+   text-align: center;
+   transition-property: all;
+   text-decoration: none;
+   background-color: var(--black);
+   color:white;
+   padding: 1rem;
+   border-radius: 5px;
+   transition-duration: 500ms;
+   width: 100%t;
 }
 
-.precio{
-    color: var(--primary);
-    font-weight: 700;
+.goback{
+   display: flex;
+   transition-property: all;
+   max-width: 150px;
+   color:white;
+   padding: 1rem;
+   border-radius: 5px;
+   transition-duration: 500ms;
+}
+
+.goback:hover{
+translate: -2rem;
 }

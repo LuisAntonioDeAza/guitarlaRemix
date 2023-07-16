@@ -1,6 +1,7 @@
 import imagen from "../../public/img/nosotros.jpg";
 import styles from "~/styles/about.css";
 
+//Carga la hoja de estilos
 export function links() {
    return [
       {
@@ -17,7 +18,7 @@ export function links() {
 
 const about = () => {
    return (
-      <main className="contenedor nosotros">
+      <main className="container about">
          <h2 className="heading">Nostros</h2>
          <div className="contenido">
             <img src={imagen} alt="img about"></img>

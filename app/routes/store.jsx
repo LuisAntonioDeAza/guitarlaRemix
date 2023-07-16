@@ -3,7 +3,7 @@ import { useLoaderData } from "@remix-run/react";
 import Guitars from "~/Components/Guitars";
 import styles from "~/styles/guitar.css";
 
-//links componens para exportar los estilos css
+//importa la hoja de estilos css
 export function links() {
    return [
       {
@@ -17,7 +17,7 @@ export function links() {
 export function meta() {
    return [
       {
-         title: "GuitarLa - Tiend sa",
+         title: "GuitarLa - Tienda",
          charset: "utf-8",
          description: "Ventas de guitarra y blog",
          viewport: "width=device-width, initial-scale=1",
@@ -26,18 +26,17 @@ export function meta() {
 }
 
 //funcion asincrona que hace una consulta a la api
+//Loader - cargador que espera la respuesta de la api
 export async function loader() {
    const guitar = await getGuitar();
    return guitar.data;
 }
 
-//Inicio del componente
-
-const Store = () => {
+export default function Store(){
    const guitar = useLoaderData();
 
    return (
-      <main className="contenedor">
+      <main className="container">
          <h2 className="heading">Nuestra coleccion</h2>
 
          {guitar.length && (
@@ -51,4 +50,4 @@ const Store = () => {
    );
 };
 
-export default Store;
+
